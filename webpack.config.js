@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const jquery = require('jquery');
-const Dotenv = require('dotenv=webpack');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/main.js',
