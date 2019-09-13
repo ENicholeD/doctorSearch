@@ -1,6 +1,5 @@
 const webpackConfig = require('./webpack.config.js');
 
-
 module.exports = function(config) {
   config.set({
     basePath: '',
@@ -13,19 +12,18 @@ module.exports = function(config) {
     exclude: [
     ],
     preprocessors: {
-      'src/**/*.js': ['webpack', 'sourcemap'],
-      'spec/**/*spec.js': ['webpack', 'sourcemap']
+      'src/*.js': ['webpack', 'sourcemap'],
+      'spec/*spec.js': ['webpack', 'sourcemap']
     },
-
     plugins: [
       'karma-jquery',
       'karma-webpack',
       'karma-jasmine',
       'karma-chrome-launcher',
       'karma-jasmine-html-reporter',
-      'karma-sourcemap-loader',
+      'karma-sourcemap-loader'
     ],
-    reporters: ['progress','kjhtml'],
+    reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

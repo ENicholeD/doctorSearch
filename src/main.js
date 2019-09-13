@@ -19,9 +19,9 @@ $(document).ready(function(){
 
     promise.then(function(response) {
       let body = JSON.parse(response);
-      console.log(doctorList);
-      doctorList.data.forEach(function(doctor){
-        $('#doctor').text(`${doctor.profile.bio}`);
+      console.log(newSearch);
+      newSearch.data.forEach(function(doctor){
+        $('#doctor').text(`${newSearch.profile.bio}`);
       });
       function(error){
         $("#doctor").text("oops! there was an error");

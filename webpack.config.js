@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const jquery = require('jquery');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
@@ -18,30 +17,30 @@ module.exports = {
   plugins: [
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(['dist']),
+    new Dotenv(),
     new HtmlWebpackPlugin({
-      title: 'Planet age converter',
+      title: 'bulba-gochi',
       template: './src/index.html',
       inject: 'body'
-    }),
-    new Dotenv()
+    })
   ],
   module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.js$/,
-        exclude: [
-          /node_modules/,
-          /spec/
-        ],
-        loader: "eslint-loader"
-      },
-    ]
-  }
+  rules: [
+    {
+      test: /\.css$/,
+      use: [
+        'style-loader',
+        'css-loader'
+      ]
+    },
+    {
+      test: /\.js$/,
+      exclude: [
+        /node_modules/,
+        /spec/
+      ],
+      loader: "eslint-loader"
+    }
+  ]
+}
 };
