@@ -6,9 +6,9 @@ import './styles.css';
 
 $(document).ready(function(){
   $('.search').submit(function(event){
+    event.preventDefault();
     const name = $("#doctorName").val();
     const issue = $("#medicalProblem").val();
-    event.preventDefault();
     $("#medicalProblem").val('');
     $('#doctorName').val('');
     console.log(name);
@@ -20,11 +20,11 @@ $(document).ready(function(){
     promise.then(function(response) {
       let body = JSON.parse(response);
       console.log(newSearch);
-      newSearch.data.forEach(function(doctor){
-        $('#doctor').text(`${body.data[i].profile.bio}`);
-      });
-      function(error){
-        $("#doctor").text("oops! there was an error");
+      if (body.data.length === 0){
+        $("#list").text("search results: none, please try again");
+      }
+      for (let i =0; i<body.data.length; i++) {
+        $("#result").append("${body.data[i].profile.first_name} ${body.data[i].profile.last_name}");
       }
     });
   });
