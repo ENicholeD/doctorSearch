@@ -1,7 +1,7 @@
 {
-  "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module"
+"parserOptions": {
+  "ecmaVersion": 6,
+  "sourceType": "module"
   },
   "extends": "eslint:recommended",
   "env": {
@@ -10,12 +10,12 @@
     "jquery": true,
     "node": true,
     "jasmine": true
-  },
-  "rules": {
+    },
+    "rules": {
       "semi": 1,
       "indent": ["warn", 2],
       "no-console": "warn",
       "no-debugger": "warn",
       "no-unused-vars": "warn"
+    }
   }
-}

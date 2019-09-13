@@ -9,22 +9,15 @@ This is an application that I made for my solo project at Epicodus.
 
 ## Specs
 
-| Behavior | Input | Output |
-| ------------- |:-------------:| -----:|
-| user inputs a medical issue and is shown a list of doctors that can help | depression | a lost of counselors is given |
-| user inputs a name of a doctor | Fredrick smith | A list of doctor profiles that match that name appear |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-
 ## Setup Instructions
 
-*
-*
-*
-*
-*
+* go to https://github.com/MagpieMortician/doctorSearch
+* clone the repository to your desktop
+* npm install in terminal
+* npn run build in terminal
+* npm start in terminal to open a live server
+* click around on page
+* in terminal, ctrl + c to close
 
 ## Known Bugs
 
