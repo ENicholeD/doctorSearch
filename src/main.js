@@ -21,7 +21,7 @@ $(document).ready(function(){
       let body = JSON.parse(response);
       console.log(newSearch);
       newSearch.data.forEach(function(doctor){
-        $('#doctor').text(`${newSearch.profile.bio}`);
+        $('#doctor').text(`${body.data[i].profile.bio}`);
       });
       function(error){
         $("#doctor").text("oops! there was an error");
