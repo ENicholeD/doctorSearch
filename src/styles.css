@@ -1,0 +1,25 @@
+body{
+  background-image: url('https://www.xmple.com/wallpaper/blue-gradient-white-linear-1920x1080-c2-87cefa-ffffff-a-105-f-14.svg');
+  background-size: cover;
+  text-align: center;
+}
+h1 {
+  margin: 5%;
+  font-family: cursive;
+  font-size: 73px;
+  color: white;
+  background-image: url('https://www.betterthanpants.com/media/catalog/product/r/n/rn--registered-nurse--stethoscope-heart-tshirt-large.png');
+  background-size: contain;
+  padding: 50px;
+}
+.search, #list {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 100px;
+}
+#list {
+  display: none;
+}
