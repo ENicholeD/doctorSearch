@@ -1,5 +1,5 @@
 {
-  "name": "DoctorSearch",
+  "name": "doctorSearch",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "lint": "eslint src/*.js",
     "test": "node ./node_modules/karma/bin/karma start karma.conf.js"
   },
-  "author": "Loewy Malkovich, Erin Duel",
+  "author": "Erin Deuel",
   "license": "MIT",
   "keywords": [],
   "description": "tamogochi with a bulbasaur",
