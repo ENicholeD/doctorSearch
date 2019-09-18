@@ -21,7 +21,7 @@ $(document).ready(function(){
       if (body.data.length === 0){
         $("#list").text("search results: none, please try again");
       }
-      body.data.forEach(doctor){
+      body.data.forEach(function(doctor){
         let firstName = doctor.profile.first_name;
         let lastName = doctor.profile.last_name;
         let title = doctor.profile.title;
@@ -31,8 +31,9 @@ $(document).ready(function(){
         let state = doctor.practices[0].visit_address.state;
         let zip = doctor.practices[0].visit_address.zip;
         let bio = doctor.profile.bio;
-        $("#list").append(`<h3>${firstName}${lastName}${title}</h3><br><img src='${photo}'><br>${street}<br>${city}, ${state}${zip}<br><br>${bio}<br><br>`);
-      }
+        let phone = doctor.practices[0].phones[0].number;
+        $("#list").append(`<h3>${firstName} ${lastName} ${title}</h3><br><img src='${photo}'><p>${street}</p><p>${city}, ${state} ${zip}</p><p>Phone number: ${phone}</p><br><p>${bio}</p><br><br>`);
+      });
     });
   });
 });
