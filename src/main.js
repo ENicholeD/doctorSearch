@@ -17,12 +17,21 @@ $(document).ready(function(){
 
     $("#list").show();
     body.then(function(response) {
-      let promise = JSON.parse(response);
-      if (promise.data.length === 0){
+      let body = JSON.parse(response);
+      if (body.data.length === 0){
         $("#list").text("search results: none, please try again");
       }
-      for (let i =0; i<promise.data.length; i++) {
-        $("#list").append("<h3>" + promise.data[i].profile.first_name + " " + promise.data[i].profile.last_name + " " + promise.data[i].profile.title + "</h3>" + "<br>" + "<img src='" + promise.data[i].profile.image_url + "'>" + "<br>" + promise.data[i].practices[i].visit_address.street + "<br>" + promise.data[i].practices[i].visit_address.city + ", " +promise.data[i].practices[i].visit_address.state + " " + promise.data[i].practices[i].visit_address.zip + "<br>" + "<br>" +  promise.data[i].profile.bio + "<br>" + "<br>");
+      body.data.forEach(doctor){
+        let firstName = doctor.profile.first_name;
+        let lastName = doctor.profile.last_name;
+        let title = doctor.profile.title;
+        let photo = doctor.profile.image_url;
+        let street = doctor.practices[0].visit_address.street;
+        let city = doctor.practices[0].visit_address.city;
+        let state = doctor.practices[0].visit_address.state;
+        let zip = doctor.practices[0].visit_address.zip;
+        let bio = doctor.profile.bio;
+        $("#list").append(`<h3>${firstName}${lastName}${title}</h3><br><img src='${photo}'><br>${street}<br>${city}, ${state}${zip}<br><br>${bio}<br><br>`);
       }
     });
   });
